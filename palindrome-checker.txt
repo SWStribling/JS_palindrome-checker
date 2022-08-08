@@ -1,0 +1,24 @@
+function palindrome(str) {
+  // Remove all non-alphanumeric characters
+  let paliCleaned = str.replace(/[^a-z0-9]/gi, "");
+
+  // Make it all lower case
+  let paliLower = paliCleaned.toLowerCase();
+
+  // Create a loop (or recurrsion) that spells the word backwards
+  let paliBackward = [];
+  for (let j = 0; j < paliLower.length; j++) {
+    paliBackward.unshift(paliLower[j]);
+    };
+
+  // Check that word with the original word
+  paliBackward = paliBackward.join("");
+  if (paliBackward === paliLower) {
+    return true;
+  }
+  else {
+  return false;
+  }
+}
+
+palindrome("_eye");
